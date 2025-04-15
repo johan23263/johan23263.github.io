@@ -42,6 +42,52 @@
 
     <!-- end custom head snippets -->
 
+    <style>
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #0073e6;
+            /* Change to your preferred hover color */
+            transform: scale(1.05);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover .social-icon {
+            transform: rotate(10deg);
+        }
+
+        @media (min-width: 768px) {
+            .social-links {
+                flex-direction: row;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -50,7 +96,7 @@
             <a href="index.html" class="logo">Johan</a>
             <div class="nav-links">
                 <a href="projects.html" class="nav-link">Projects</a>
-                <a href="find_me.html" class="nav-link">Contact</a>
+                <a href="find_me.html" class="nav-link"><u>Contact</u></a>
                 <button id="darkModeToggle" class="dark-mode-toggle sound-element">
                     <i class="fas fa-moon" id="darkModeIcon"></i>
                 </button>
@@ -59,19 +105,25 @@
     </nav>
     <div class="container-lg px-3 my-5 markdown-body">
 
-        <h1 id="hello">Hello</h1>
+        <h1 id="hello">Find Me</h1>
 
-        <p class="project-description">My name is Johan Furtado, a 19 year old student at IIIT Delhi with a passion for
-            sports, particularly football and Formula 1. Beyond academics, I'm deeply involved in Model United Nations
-            (MUN) and video editing-two fields hope to turn into a career. MUN has improved my diplomacy and public
-            speaking skills, while video editing allows me to express my creativity.
-
-            At college, I participate in filmmaking and international relations clubs, and occasionally volunteer for a
-            dog NGO. My goal is to combine my technical education with my creative interests, whether in international
-            policy, community service, or digital content creation, to do something beneficial for those around me in
-            the future!</p>
-
-        <p><img src="/IMG-20240810-WA0024.jpg" alt="Image" /></p>
+        <div class="social-links">
+            <a href="https://x.com/johanfurtado?t=qPAr7DVcFvBPpUxKHlm6AQ&s=09" target="_blank" rel="noopener noreferrer"
+                class="social-link">
+                <img src="twitter.svg" alt="Twitter" class="social-icon" />
+                <span>Find me on X</span>
+            </a>
+            <a href="https://www.instagram.com/johanfurtado?igsh=MTBodXF3bG53a3c2bA==" target="_blank"
+                rel="noopener noreferrer" class="social-link">
+                <img src="instagram.svg" alt="Instagram" class="social-icon" />
+                <span>Find me on Instagram</span>
+            </a>
+            <a href="https://open.spotify.com/user/fm1f6lyct9nmsvr1n7nyp0pym?si=guq7jXGVT36MMz9huJkwEQ" target="_blank"
+                rel="noopener noreferrer" class="social-link">
+                <img src="Spotify_logo_without_text.svg.png" alt="Spotify" class="social-icon" />
+                <span>What I like to listen to!</span>
+            </a>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
         integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
