@@ -36,7 +36,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
-
     <!-- You can set your favicon here -->
     <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
 
@@ -96,7 +95,6 @@
             localStorage.setItem('darkMode', 'enabled');
         }
 
-        // Disable dark mode
         function disableDarkMode() {
             document.body.classList.remove('dark-mode');
             darkModeIcon.className = 'fas fa-moon';
@@ -104,7 +102,6 @@
             localStorage.setItem('darkMode', 'disabled');
         }
 
-        // Add event listener
         darkModeToggle.addEventListener('click', toggleDarkMode);
     </script>
 </body>

@@ -64,7 +64,6 @@
 
         .social-link:hover {
             color: #0073e6;
-            /* Change to your preferred hover color */
             transform: scale(1.05);
         }
 
@@ -148,7 +147,6 @@
             localStorage.setItem('darkMode', 'enabled');
         }
 
-        // Disable dark mode
         function disableDarkMode() {
             document.body.classList.remove('dark-mode');
             darkModeIcon.className = 'fas fa-moon';
@@ -156,7 +154,6 @@
             localStorage.setItem('darkMode', 'disabled');
         }
 
-        // Add event listener
         darkModeToggle.addEventListener('click', toggleDarkMode);
     </script>
 </body>

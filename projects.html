@@ -37,7 +37,6 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="index.html" class="logo">Johan</a>
@@ -55,14 +54,12 @@
         <source src="Fast Whoosh Sound Effect 4.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Main Content -->
     <main>
         <div class="container">
             <header>
                 <h1 id="projects">My Projects</h1>
                 <p class="subtitle">
-                    A showcase of my technical work and projects. Each project represents skills and technologies I've
-                    developed.
+                    A showcase of my work and projects.
                 </p>
             </header>
 
@@ -209,20 +206,23 @@
         </div>
     </main>
 
+    <img src="qrcode2.png" height="20%">
+    <img src="qrcode1.png" height="20%">
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
         integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Initialize anchor links
             anchors.add('h1, h2, h3');
 
             const sound = document.getElementById('sound');
             const playSound = () => {
-                sound.currentTime = 0; // Reset sound to start
+                sound.currentTime = 0; // to resest it
                 sound.play();
             };
 
-            // Smooth scrolling for anchor links
+            // smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -240,7 +240,7 @@
                 });
             });
 
-
+            // it seems github pages doesn't support audio autoplay?
             document.querySelectorAll('.project-card').forEach(card => {
                 card.addEventListener('mouseenter', function () {
                     console.log('Mouse entered card');
@@ -248,7 +248,6 @@
                 });
             });
 
-            // Add animation classes to project cards on scroll
             const projectCards = document.querySelectorAll('.project-card');
 
             const observerOptions = {
@@ -291,7 +290,6 @@
                 localStorage.setItem('darkMode', 'enabled');
             }
 
-            // Disable dark mode
             function disableDarkMode() {
                 document.body.classList.remove('dark-mode');
                 darkModeIcon.className = 'fas fa-moon';
@@ -299,7 +297,6 @@
                 localStorage.setItem('darkMode', 'disabled');
             }
 
-            // Add event listener
             darkModeToggle.addEventListener('click', toggleDarkMode);
         });
     </script>
