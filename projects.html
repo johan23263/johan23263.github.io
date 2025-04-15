@@ -7,77 +7,440 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-    <title>Hello | johan23263</title>
+    <title>My Projects | johan23263</title>
     <meta name="generator" content="Jekyll v3.10.0" />
-    <meta property="og:title" content="Hello" />
+    <meta property="og:title" content="My Projects" />
     <meta property="og:locale" content="en_US" />
+    <meta name="description" content="A showcase of technical projects by Johan" />
+    <meta property="og:description" content="A showcase of technical projects by Johan" />
     <link rel="canonical" href="https://johan23263.github.io/" />
     <meta property="og:url" content="https://johan23263.github.io/" />
     <meta property="og:site_name" content="johan23263" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Hello" />
+    <meta property="twitter:title" content="My Projects" />
     <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","headline":"Hello","name":"johan23263","url":"https://johan23263.github.io/"}</script>
+        {"@context":"https://schema.org","@type":"WebSite","headline":"My Projects","name":"johan23263","url":"https://johan23263.github.io/","description":"A showcase of technical projects by Johan"}
+    </script>
     <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=95f4f769bd83cfd25913243c04ad4632fa56c35f">
-    <link rel="stylesheet" href="styles.css">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Setup Google Analytics -->
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #4b5563;
+            --accent-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --light-gray: #e2e8f0;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            min-height: 100vh;
+        }
 
-    <!-- You can set your favicon here -->
-    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+        .navbar {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    <!-- end custom head snippets -->
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .project-description {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--accent-color);
+        }
+
+        .footer {
+            background-color: var(--white);
+            border-top: 1px solid var(--light-gray);
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container-lg px-3 my-5 markdown-body">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="logo">Johan</a>
+            <div class="nav-links">
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-        <h1 id="projects">My projects</h1>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <header>
+                <h1 id="projects">My Projects</h1>
+                <p class="subtitle">
+                    A showcase of my technical work and projects. Each project represents skills and technologies I've developed.
+                </p>
+            </header>
 
-        <p>Here's a list of some of the stuff I've worked on:</p>
-        <ol class="project-list">
-            <li class="project-item">
-                <img src="angry-bird.webp" alt="Angry Birds Clone">
-                Worked on an Angry Birds clone, you can find it on
-                <a href="https://github.com/Divjotflora/ANGRYBIRDSGAMEAPPROJ">this GitHub repository</a>
-            </li>
-            <li class="project-item">
-                <img src="ZLeIb.png" alt="RISC-V Assembler">
-                Created a RISC-V assembler and simulator. That can be found
-                <a href="https://github.com/arnav-makkar/CO-Project">here</a>
-            </li>
-        </ol>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="angry-bird.webp" alt="Angry Birds Clone" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Angry Birds Clone</h3>
+                        <p class="project-description">
+                            Created a clone of the Angry Birds game for our Advanced Programming course in Java using libgdx.
+                        </p>
+                        <a href="https://github.com/Divjotflora/ANGRYBIRDSGAMEAPPROJ" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="ZLeIb.png" alt="RISC-V Assembler" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">RISC-V Assembler & Simulator</h3>
+                        <p class="project-description">
+                            A tool that can assemble and simulate RISC-V assembly code, designed for educational purposes.
+                        </p>
+                        <a href="https://github.com/arnav-makkar/CO-Project" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="image 7.png" alt="HCI" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">HCI Education App</h3>
+                        <p class="project-description">
+                            Designed an educational app for HCI course, focusing on user experience and interface design.
+                        </p>
+                        <a href="https://www.figma.com/design/TkUPcbcItR7rRsRZgHGNU3/HCI-Submission-2?node-id=0-1&t=Me6esOCrqPl1D1V6-1" class="project-link">
+                            <i class="fab"></i> View on Figma
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="container">
+
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="Screenshot 2025-04-15 191048.png" alt="ISFF Movie" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">ISFF Movie</h3>
+                    <p class="project-description">
+                        Edited a Short Film for an Inter School Film Making Competition. Nominated for the Award of Best Editor
+                    </p>
+                    <a href="https://drive.google.com/file/d/1tWKVtXXH11f9f1msMhzy1lzFDuPLB-q9/view?usp=sharing" class="project-link">
+                        <i class="fab"></i> Take a look
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="Screenshot 2.png" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Musical Performance</h3>
+                    <p class="project-description">
+                        Edited a Musical Performance for Broadcast.
+                    </p>
+                    <a href="https://drive.google.com/file/d/1CkzetwDh6LvYtJNS1K_VPaPsUIuSgnzN/view?usp=sharing" class="project-link">
+                        <i class="fab"></i> Take a look
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="Screenshot 3.png" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">IIIT Delhi's Sport Council</h3>
+                    <p class="project-description">
+                        Edited a Promotional Video for The IIIT Delhi Sports Council's Instagram Page, held in collaboration with Limca
+                    </p>
+                    <a href="https://www.instagram.com/reel/Cxkydrxp8a2/?utm_source=ig_web_copy_link" class="project-link">
+                        <i class="fab"></i> See on Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="container">
+    
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="Screenshot 4.png" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title"></h3>
+                    <p class="project-description">
+                        Edited a Recap Video for The IIIT Delhi Sports Council's Instagram Page, held in IIT Kanpur
+                    </p>
+                    <a href="https://www.instagram.com/reel/CzEVn79JPUr/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==" class="project-link">
+                        <i class="fab"></i> Take a look on Instagram
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="Screenshot 5.png" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Posts for Barkedo</h3>
+                    <p class="project-description">
+                        Edited Instagram Posts for a Pet Adoption Startup (Barkedo)
+                    </p>
+                    <a href="https://www.instagram.com/p/C2jvmvjJE2Q/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="project-link">
+                        <i class="fab"></i> Take a look
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">© 2025 johan23263. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
         integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-</body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize anchor links
+            anchors.add('h1, h2, h3');
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const items = document.querySelectorAll(".project-item");
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                } else {
-                    entry.target.classList.remove("visible");
-                }
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
-        }, {
-            threshold: 0.1, // Trigger when 10% of the item is visible
+
+            // Add animation classes to project cards on scroll
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            projectCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
         });
-
-        items.forEach((item) => observer.observe(item));
-    });
-</script>
-
+    </script>
+</body>
 </html>
