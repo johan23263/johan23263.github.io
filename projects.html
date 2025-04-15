@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>Hello | johan23263</title>
+    <meta name="generator" content="Jekyll v3.10.0" />
+    <meta property="og:title" content="Hello" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://johan23263.github.io/" />
+    <meta property="og:url" content="https://johan23263.github.io/" />
+    <meta property="og:site_name" content="johan23263" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Hello" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"Hello","name":"johan23263","url":"https://johan23263.github.io/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=95f4f769bd83cfd25913243c04ad4632fa56c35f">
+    <link rel="stylesheet" href="styles.css">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+
+
+
+    <!-- You can set your favicon here -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+    <!-- end custom head snippets -->
+
+</head>
+
+<body>
+    <div class="container-lg px-3 my-5 markdown-body">
+
+        <h1 id="projects">My projects</h1>
+
+        <p>Here's a list of some of the stuff I've worked on:</p>
+        <ol class="project-list">
+            <li class="project-item">
+                <img src="angry-bird.webp" alt="Angry Birds Clone">
+                Worked on an Angry Birds clone, you can find it on
+                <a href="https://github.com/Divjotflora/ANGRYBIRDSGAMEAPPROJ">this GitHub repository</a>
+            </li>
+            <li class="project-item">
+                <img src="ZLeIb.png" alt="RISC-V Assembler">
+                Created a RISC-V assembler and simulator. That can be found
+                <a href="https://github.com/arnav-makkar/CO-Project">here</a>
+            </li>
+        </ol>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(".project-item");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                } else {
+                    entry.target.classList.remove("visible");
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of the item is visible
+        });
+
+        items.forEach((item) => observer.observe(item));
+    });
+</script>
+
+</html>
